@@ -126,9 +126,6 @@ Route::middleware(['auth', 'role:petugas'])->group(function () {
     Route::get('/petugas/dashboard', [PetugasDashboardController::class, 'index'])
         ->name('petugas.dashboard');
 
-    // Cetak laporan pengaduan (Petugas) - reuse PengaduanController@cetak
-    Route::get('/petugas/pengaduan/{id}/cetak', [PengaduanController::class, 'cetak'])
-        ->name('petugas.pengaduan.cetak');
 
     // 🔹 Tombol aksi status pengaduan
     Route::post('/petugas/pengaduan/{id}/mulai', [PetugasDashboardController::class, 'mulai'])
