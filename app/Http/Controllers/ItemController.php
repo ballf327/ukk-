@@ -73,11 +73,7 @@ class ItemController extends Controller
             ]);
 
             // ✅ Simpan juga ke tabel temporary_item (histori)
-            TemporaryItem::create([
-                'id_item' => $item->id_item,
-                'nama_barang_baru' => $item->nama_item,
-                'lokasi_barang_baru' => $lokasiModel->nama_lokasi ?? '-',
-            ]);
+
 
             DB::commit();
 
